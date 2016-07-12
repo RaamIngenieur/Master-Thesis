@@ -1,0 +1,26 @@
+17:22:14 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+
+17:22:19 Build Finished (took 4s.986ms)
+

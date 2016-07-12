@@ -1,0 +1,1534 @@
+15:56:43 **** Incremental Build of configuration Release for project Stereosimd ****
+make all 
+make: Nothing to be done for `all'.
+15:56:57 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/include/opencv -O3 -Wall -c -fmessage-length=0 -opencv -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+cc1plus: fatal error: stropcv.d: No such file or directory
+compilation terminated.
+make: *** [stropcv.o] Error 1
+15:57:40 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I/usr/include/opencv -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++ -L/usr/lib -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+15:59:57 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:00:05 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:02:38 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:02:43 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:02:50 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:11:07 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:11:12 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:11:58 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:12:01 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:23:49 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:26:46 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:26:53 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:28:21 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:28:41 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:30:00 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:31:22 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:37:42 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:37:46 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:39:19 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:39:42 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:39:46 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:41:15 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:41:20 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:41:29 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:41:33 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:41:37 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:38:40 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+15:38:55 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:39:56 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:52:28 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+../stropcv.cpp: In function ‘int main(int, char**)’:
+../stropcv.cpp:38:11: error: redeclaration of ‘double dWidth’
+    double dWidth = cap1.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:33:11: note: ‘double dWidth’ previously declared here
+    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:39:11: error: redeclaration of ‘double dHeight’
+    double dHeight = cap1.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:34:11: note: ‘double dHeight’ previously declared here
+    double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:43:11: error: redeclaration of ‘double dWidth’
+    double dWidth = cap2.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:33:11: note: ‘double dWidth’ previously declared here
+    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:44:11: error: redeclaration of ‘double dHeight’
+    double dHeight = cap2.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:34:11: note: ‘double dHeight’ previously declared here
+    double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:66:14: error: redeclaration of ‘bool bSuccess’
+         bool bSuccess = cap1.read(frame); // read a new frame from video
+              ^
+../stropcv.cpp:56:14: note: ‘bool bSuccess’ previously declared here
+         bool bSuccess = cap.read(frame); // read a new frame from video
+              ^
+../stropcv.cpp:76:14: error: redeclaration of ‘bool bSuccess’
+         bool bSuccess = cap2.read(frame); // read a new frame from video
+              ^
+../stropcv.cpp:56:14: note: ‘bool bSuccess’ previously declared here
+         bool bSuccess = cap.read(frame); // read a new frame from video
+              ^
+make: *** [stropcv.o] Error 1
+15:53:13 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+../stropcv.cpp: In function ‘int main(int, char**)’:
+../stropcv.cpp:38:11: error: redeclaration of ‘double dWidth’
+    double dWidth = cap1.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:33:11: note: ‘double dWidth’ previously declared here
+    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:39:11: error: redeclaration of ‘double dHeight’
+    double dHeight = cap1.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:34:11: note: ‘double dHeight’ previously declared here
+    double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:43:11: error: redeclaration of ‘double dWidth’
+    double dWidth = cap2.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:33:11: note: ‘double dWidth’ previously declared here
+    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
+           ^
+../stropcv.cpp:44:11: error: redeclaration of ‘double dHeight’
+    double dHeight = cap2.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+../stropcv.cpp:34:11: note: ‘double dHeight’ previously declared here
+    double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT); //get the height of frames of the video
+           ^
+make: *** [stropcv.o] Error 1
+15:53:53 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+15:54:02 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:56:09 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+15:56:16 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:56:54 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+15:57:01 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:57:14 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:58:32 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:58:37 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:59:17 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+15:59:24 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:01:26 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:01:47 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:01:51 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:03:55 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+16:04:01 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:04:23 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:04:28 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:04:44 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:04:49 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:27:57 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:28:22 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:28:24 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:45:27 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:45:29 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:45:31 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:45:45 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:46:34 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:46:36 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:46:52 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+16:46:53 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:36:55 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:37:17 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:38:16 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:39:21 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:39:30 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:39:32 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:45:27 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:45:31 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:45:50 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:45:53 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:55:20 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:55:24 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:57:18 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:57:25 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:58:40 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+11:58:45 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:00:32 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:00:42 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:02:34 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:02:38 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:03:06 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:03:10 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:03:12 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:03:27 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:03:29 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:08:37 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:08:42 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:10:34 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:10:38 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:13:00 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:13:04 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:13:43 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:23:14 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+/usr/bin/ld: ./stropcv.o: undefined reference to symbol 'cvErode'
+//usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+make: *** [Stropcv] Error 1
+12:23:55 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+/usr/bin/ld: ./stropcv.o: undefined reference to symbol 'cvErode'
+//usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+make: *** [Stropcv] Error 1
+12:24:05 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+/usr/bin/ld: ./stropcv.o: undefined reference to symbol 'cvErode'
+//usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+make: *** [Stropcv] Error 1
+12:26:07 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_highgui
+/usr/bin/ld: ./stropcv.o: undefined reference to symbol 'cvErode'
+//usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+make: *** [Stropcv] Error 1
+12:28:23 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:28:30 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:29:50 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:29:54 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:30:57 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:31:02 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:31:55 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:31:59 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:35:01 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:35:05 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:35:22 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:35:25 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:36:09 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:36:48 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:36:51 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+12:48:19 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+12:48:24 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+13:01:08 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+13:01:08 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+13:01:17 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+13:05:59 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+13:05:59 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+13:06:06 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+13:06:29 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+13:06:29 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+13:06:33 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+14:51:38 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+14:51:39 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+Building file: ../stropcv.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"stropcv.d" -MT"stropcv.d" -o "stropcv.o" "../stropcv.cpp"
+Finished building: ../stropcv.cpp
+ 
+Building target: Stropcv
+Invoking: GCC C++ Linker
+g++  -o "Stropcv"  ./stropcv.o   -lopencv_core -lopencv_imgproc -lopencv_highgui
+Finished building target: Stropcv
+ 
+14:51:52 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+14:52:23 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+14:52:24 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+14:52:26 **** Incremental Build of configuration Release for project Stropcv ****
+make all 
+make: Nothing to be done for `all'.
+11:54:37 **** Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:54:45 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:21:45 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:21:55 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:28:31 **** Incremental Build of configuration Release for project Negate ****
+make all 
+make: Nothing to be done for `all'.
+11:28:39 **** Incremental Build of configuration Release for project Negate ****
+make all 
+make: Nothing to be done for `all'.
+11:39:54 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+Building target: StereoAug
+Invoking: GCC C++ Linker
+g++  -o "StereoAug"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoAug
+ 
+11:39:54 **** Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+11:40:29 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+11:52:46 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:52:46 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In destructor ‘UCarray::~UCarray()’:
+../speed.cpp:43:7: error: ‘P’ was not declared in this scope
+  free(P);
+       ^
+make: *** [speed.o] Error 1
+11:53:23 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:53:24 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDRighttoLeft13(unsigned int*, __m128i*, __m128i*, int, int, unsigned int*, unsigned int*, unsigned int*)’:
+../speed.cpp:205:27: warning: ‘HammDistyy’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  unsigned int *HammDistt,*HammDistyy,*XorSumm, HammDistCalc;
+                           ^
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+11:55:06 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:55:06 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDRighttoLeft13(unsigned int*, __m128i*, __m128i*, int, int, unsigned int*, unsigned int*, unsigned int*)’:
+../speed.cpp:205:27: warning: ‘HammDistyy’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  unsigned int *HammDistt,*HammDistyy,*XorSumm, HammDistCalc;
+                           ^
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+11:55:14 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+11:59:30 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+11:59:31 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDRighttoLeft13(unsigned int*, __m128i*, __m128i*, int, int, unsigned int*, unsigned int*, unsigned int*)’:
+../speed.cpp:205:27: warning: ‘HammDistyy’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  unsigned int *HammDistt,*HammDistyy,*XorSumm, HammDistCalc;
+                           ^
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+11:59:37 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+12:03:40 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+12:03:41 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+12:03:47 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+12:06:40 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+13:24:36 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+13:24:37 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+13:24:52 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+14:28:38 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+14:34:29 **** Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+In file included from /usr/include/c++/4.9/thread:35:0,
+                 from ../speed.cpp:11:
+/usr/include/c++/4.9/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support for the \
+  ^
+../speed.cpp: In function ‘int main()’:
+../speed.cpp:356:2: error: ‘thread’ is not a member of ‘std’
+  std::thread a(SHDRighttoLeft13, DMap       , (__m128i*)LCTImage       , (__m128i*)RCTImage       , row / 4 + 6 , column, HammDist        , XorSum       , HammDistY);
+  ^
+../speed.cpp:357:2: error: ‘thread’ is not a member of ‘std’
+  std::thread b(SHDRighttoLeft13, DMap + (row / 4 - 6)*column  , (__m128i*)LCTImage + (row / 4 - 6)*column  , (__m128i*)RCTImage + (row / 4 - 6)*column  , row / 4 + 12 , column, HammDist + (row / 4 - 6)*column  , XorSum + (row / 4 - 6)*column  , HammDistY + (row / 4 - 6)*column);
+  ^
+../speed.cpp:358:2: error: ‘thread’ is not a member of ‘std’
+  std::thread c(SHDRighttoLeft13, DMap + (row / 2 - 6)*column  , (__m128i*)LCTImage + (row / 2 - 6)*column  , (__m128i*)RCTImage + (row / 2 - 6)*column  , row / 4 + 12 , column, HammDist + (row / 2 - 6)*column  , XorSum + (row / 2 - 6)*column  , HammDistY + (row / 2 - 6)*column);
+  ^
+../speed.cpp:359:2: error: ‘thread’ is not a member of ‘std’
+  std::thread d(SHDRighttoLeft13, DMap + (3 * row / 4 - 6)*column , (__m128i*)LCTImage + (3 * row / 4 - 6)*column , (__m128i*)RCTImage + (3 * row / 4 - 6)*column , row / 4 + 6 , column, HammDist + (3 * row / 4 - 6)*column , XorSum + (3 * row / 4 - 6)*column , HammDistY + (3 * row / 4 - 6)*column);
+  ^
+../speed.cpp:361:2: error: ‘a’ was not declared in this scope
+  a.join();
+  ^
+../speed.cpp:362:2: error: ‘b’ was not declared in this scope
+  b.join();
+  ^
+../speed.cpp:363:2: error: ‘c’ was not declared in this scope
+  c.join();
+  ^
+../speed.cpp:364:2: error: ‘d’ was not declared in this scope
+  d.join();
+  ^
+make: *** [speed.o] Error 1
+14:36:22 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+Building target: StereoOct
+Invoking: GCC C++ Linker
+g++  -o "StereoOct"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOct
+ 
+14:36:23 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOctVector
+Invoking: GCC C++ Linker
+g++  -o "StereoOctVector"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOctVector
+ 
+14:36:36 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+14:36:42 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:00:16 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDRighttoLeft13(unsigned int*, __m128i*, __m128i*, int, int, unsigned int*, unsigned int*, unsigned int*)’:
+../speed.cpp:256:10: error: cannot convert ‘int’ to ‘__m128i {aka __vector(2) long long int}’ in assignment
+     VSum = 0;
+          ^
+make: *** [speed.o] Error 1
+15:02:54 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDRighttoLeft13(unsigned int*, __m128i*, __m128i*, int, int, unsigned int*, unsigned int*, unsigned int*)’:
+../speed.cpp:256:22: error: can’t convert between vector values of different size
+     VSum = (__m128i) 0;
+                      ^
+make: *** [speed.o] Error 1
+15:06:07 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOctVector
+Invoking: GCC C++ Linker
+g++  -o "StereoOctVector"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOctVector
+ 
+15:06:15 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:08:40 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOctVector
+Invoking: GCC C++ Linker
+g++  -o "StereoOctVector"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOctVector
+ 
+15:08:47 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:19:00 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:19:29 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:19:42 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:19:51 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:19:59 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:20:31 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:20:44 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:21:23 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:38:37 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOctVector
+Invoking: GCC C++ Linker
+g++  -o "StereoOctVector"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOctVector
+ 
+15:38:44 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:38:54 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:39:02 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:39:28 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:39:55 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:40:07 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:40:14 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:40:24 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+15:40:51 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:41:00 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:41:08 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:41:17 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+15:56:51 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Finished building: ../speed.cpp
+ 
+Building target: StereoOctVector
+Invoking: GCC C++ Linker
+g++  -o "StereoOctVector"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: StereoOctVector
+ 
+15:56:58 **** Incremental Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+11:24:07 **** Build of configuration Release for project StereoOctVector ****
+make all 
+make: Nothing to be done for `all'.
+11:25:14 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+11:25:30 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+11:26:49 **** Clean-only build of configuration Debug for project Stereo ****
+make clean 
+rm -rf  ./speed.o  ./speed.d  Stereo
+ 
+11:26:49 **** Incremental Build of configuration Debug for project Stereo ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O3 -g3 -Wall -c -fmessage-length=0 -ftree-vectorizer-verbose=2 -v -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+Using built-in specs.
+COLLECT_GCC=g++
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.9.2-0ubuntu1~14.04' --with-bugurl=file:///usr/share/doc/gcc-4.9/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.9 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.9 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.9-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.9-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.9-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.9.2 (Ubuntu 4.9.2-0ubuntu1~14.04) 
+COLLECT_GCC_OPTIONS='-std=c++11' '-O3' '-g3' '-Wall' '-c' '-fmessage-length=0' '-v' '-MMD' '-MP' '-MF' 'speed.d' '-MT' 'speed.d' '-o' 'speed.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -MMD speed.d -MF speed.d -MP -MT speed.d -dD -D_GNU_SOURCE ../speed.cpp -quiet -dumpbase speed.cpp -mtune=generic -march=x86-64 -auxbase-strip speed.o -g3 -O3 -Wall -std=c++11 -version -fmessage-length=0 -fstack-protector -Wformat-security -o /tmp/ccXmGthZ.s
+GNU C++ (Ubuntu 4.9.2-0ubuntu1~14.04) version 4.9.2 (x86_64-linux-gnu)
+	compiled by GNU C version 4.9.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/4.9"
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/4.9
+ /usr/include/x86_64-linux-gnu/c++/4.9
+ /usr/include/c++/4.9/backward
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU C++ (Ubuntu 4.9.2-0ubuntu1~14.04) version 4.9.2 (x86_64-linux-gnu)
+	compiled by GNU C version 4.9.2, GMP version 5.1.3, MPFR version 3.1.2-p3, MPC version 1.0.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: bb3a956465d772c916e7b708c90318b2
+../speed.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../speed.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+COLLECT_GCC_OPTIONS='-std=c++11' '-O3' '-g3' '-Wall' '-c' '-fmessage-length=0' '-v' '-MMD' '-MP' '-MF' 'speed.d' '-MT' 'speed.d' '-o' 'speed.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o speed.o /tmp/ccXmGthZ.s
+GNU assembler version 2.24 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.24
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.9/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.9/../../../:/lib/:/usr/lib/
+Finished building: ../speed.cpp
+ 
+Building target: Stereo
+COLLECT_GCC_OPTIONS='-std=c++11' '-O3' '-g3' '-Wall' '-c' '-fmessage-length=0' '-v' '-MMD' '-MP' '-MF' 'speed.d' '-MT' 'speed.d' '-o' 'speed.o' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Invoking: GCC C++ Linker
+g++  -o "Stereo"  ./speed.o   -lz -lm -lpng12 -lpthread
+Finished building target: Stereo
+ 
+17:57:15 **** Incremental Build of configuration Debug for project Stereo ****
+make all 
+make: Nothing to be done for `all'.
+17:59:19 **** Incremental Build of configuration Release for project Stereosimd ****
+make all 
+make: Nothing to be done for `all'.
+14:14:42 **** Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+14:14:47 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+Building target: Stereo
+Invoking: GCC C++ Linker
+g++ -pg -o "Stereo"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: Stereo
+ 
+14:14:54 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+14:20:56 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+14:21:00 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+make: Nothing to be done for `all'.
+14:21:07 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+14:21:07 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+make: Nothing to be done for `all'.
+14:21:13 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+14:25:49 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+14:25:54 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+14:27:30 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+14:27:35 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+14:33:45 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+14:33:52 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+17:59:09 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+17:59:20 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+17:21:59 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+17:22:07 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+make: Nothing to be done for `all'.
+17:22:14 **** Incremental Build of configuration Release for project Morphological opening ****
+make all 
+Building file: ../morph.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"morph.d" -MT"morph.d" -o "morph.o" "../morph.cpp"
+../morph.cpp: In function ‘int main()’:
+../morph.cpp:324:9: warning: variable ‘t1’ set but not used [-Wunused-but-set-variable]
+  double t1, t2;
+         ^
+../morph.cpp:324:13: warning: unused variable ‘t2’ [-Wunused-variable]
+  double t1, t2;
+             ^
+../morph.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../morph.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../morph.cpp
+ 
+Building target: Morphological opening
+Invoking: GCC C++ Linker
+g++  -o "Morphological opening"  ./morph.o   -lpng12 -lm -lz -lpthread
+Finished building target: Morphological opening
+ 
+19:49:03 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+make: Nothing to be done for `all'.
+19:49:04 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+19:49:05 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.
+19:49:14 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -pg -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../speed.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../speed.cpp
+ 
+Building target: Stereo
+Invoking: GCC C++ Linker
+g++ -pg -o "Stereo"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: Stereo
+ 
+19:49:17 **** Incremental Build of configuration Release for project StereoAug ****
+make all 
+make: Nothing to be done for `all'.
+19:49:17 **** Incremental Build of configuration Release for project StereoOct ****
+make all 
+make: Nothing to be done for `all'.

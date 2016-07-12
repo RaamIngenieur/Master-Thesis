@@ -1,0 +1,188 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <iostream>
+#include <vector>
+#include <time.h>
+#include <sys/time.h>
+
+#include "nema.h"
+#include "NemaDriver/Think2D.h"
+#include "NemaDriver/NemaUtils.h"
+#include "NemaDriver/tsi_cmdlist.h"
+#include "NemaDriver/NemaRegs.h"
+
+#define HOLD_DMA        0x80000000
+
+static void
+Nema_setconst(int reg, int comp, uint32_t value)
+{
+	tsi_cmdl_add_cmd(NEMA_CONSTREG_ADDR,(reg<<4) | (1<<comp) );
+	tsi_cmdl_add_cmd(NEMA_CONSTREG_DATA, value );
+}
+
+Nema::Nema(void)
+{
+  m_isInited = false;
+}
+
+void
+Nema::shutDown(void)
+{
+  printf("\nTotal time spent memcpy'ing: %.3f\n", total_time);
+  ::nema_shutdown();
+}
+
+bool
+Nema::init(fb_var_screeninfo vinfo)
+{
+  if(nema_init()) {
+    std::cerr << "Error initializing nema." << std::endl;
+    return false;
+  }
+
+  m_isInited = true;
+
+  m_xres = vinfo.xres;
+  m_yres = vinfo.yres;
+
+  total_time = 0.0;
+
+  /// Get frame buffer pointer
+  thinklcdml_reg_read(0x3c, &m_fbp);
+  printf("m_fbp: 0x%08x\n", m_fbp);
+
+  /// Set up blender
+  tsi_cmdl_add_cmd(NEMA_TARGET_MODE,    T2D_RGBA8888);
+  tsi_cmdl_add_cmd(NEMA_TARGET_BAR,     m_fbp);
+  tsi_cmdl_add_cmd(NEMA_TARGET_STRIDE,  (m_xres * 4));
+  tsi_cmdl_add_cmd(NEMA_TARGET_RESOL,   (m_yres << 16) | m_xres);
+  tsi_cmdl_add_cmd(NEMA_TARGET_CLIPMAX, ((m_yres-1) << 16) | (m_xres-1));
+  tsi_cmdl_add_cmd(NEMA_TARGET_BLEND,   (DSBF_ZERO << 16) | (DSBF_ONE));
+
+  /// Set up rasterizer
+  tsi_cmdl_add_cmd(NEMA_VERTEX0_X, 0);
+  tsi_cmdl_add_cmd(NEMA_VERTEX0_Y, 0);
+  tsi_cmdl_add_cmd(NEMA_VERTEX0_Z, 0);
+  tsi_cmdl_add_cmd(NEMA_VERTEX0_W, 0);
+
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_X, m_xres - 1);
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_Y, m_yres - 1);
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_Z, 0);
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_W, 0);
+
+  tsi_cmdl_add_cmd(NEMA_VAR1_V0_3, 2); /// stepx
+  tsi_cmdl_add_cmd(NEMA_VAR1_V0_2, 2); /// stepy
+
+  int reg = 0, index = 0;
+  tsi_cmdl_add_cmd(NEMA_CONSTREG_ADDR,(reg<<4) | (1<<index));
+  tsi_cmdl_add_cmd(NEMA_CONSTREG_DATA, (uint32_t)m_fbp);
+
+  /// Load binary
+  void *bin = nema_load_binary("kernels/yuv2rgba.bin");
+  assert(bin);
+
+  tsi_cmdl_add_cmd(NEMA_FRAG_PTR, ::nema_virt_to_phys((uint32_t)bin));
+
+  return true;
+}
+
+void
+Nema::yuv2rgb(HEVCDecLib_Picture *pic)
+{
+  static bool entry = false;
+  static struct timeval tim;
+  static double t1, t2;
+  int width, height;
+  int ind;
+
+  /// Now that the video dimensions are known reprogram rasterizer and the interpolators
+  if(entry == false) {
+    width  = (pic->uiCWidth  * 2) > m_xres ? m_xres : pic->uiCWidth  * 2;
+    height = (pic->uiCHeight * 2) > m_yres ? m_yres : pic->uiCHeight * 2;
+//    width = pic->uiCWidth * 2;
+//    height = pic->uiCHeight * 2;
+
+    printf("\n %d x %d \n", width, height);
+    printf(" pic->uiCWidth: %d pic->uiCHeight: %d pic->uiLWidth: %d pic->uiLHeight: %d\n", pic->uiCWidth, pic->uiCHeight, pic->uiLWidth, pic->uiLHeight);
+    printf(" pic->uiCStride: %d pic->uiLStride: %d\n", pic->uiCStride, pic->uiLStride);
+
+    /// Set up window clip coordinates (viewport) to (0, width) x (0, height)
+    /// Everything drawn outside this viewport is clipped out
+    tsi_cmdl_add_cmd(NEMA_TARGET_RESOL,  (height << 16) | width);
+
+    /// Set up rasterizer dimensions
+    /// The rasterizer will generate ( (width - 1) / 2 ) x ( (height - 1) / 2) ) threads
+    tsi_cmdl_add_cmd(NEMA_VERTEX1_X, (width - 1) / 2);
+    tsi_cmdl_add_cmd(NEMA_VERTEX1_Y, (height - 1) / 2);
+
+    tsi_cmdl_add_cmd(NEMA_VAR0_V1_0, pic->uiLStride * 2);   /// Interpolator 0 stride
+    tsi_cmdl_add_cmd(NEMA_VAR0_V2_0, 1*2);                  /// Interpolator 0 step
+
+    tsi_cmdl_add_cmd(NEMA_VAR0_V1_2, pic->uiCStride);       /// Interpolator 2 stride
+    tsi_cmdl_add_cmd(NEMA_VAR0_V2_2, 0);                    /// Interpolator 2 step
+
+    tsi_cmdl_add_cmd(NEMA_VAR0_V1_3, pic->uiCStride);       /// Interpolator 3 stride
+    tsi_cmdl_add_cmd(NEMA_VAR0_V2_3, 0);                    /// Interpolator 3 step
+
+//    tsi_cmdl_add_cmd(NEMA_VAR0_V0_1, m_fbp );                /// Interpolator 1 start
+//    tsi_cmdl_add_cmd(NEMA_VAR0_V1_1, m_xres * 4*2 );         /// Interpolator 1 stride
+//    tsi_cmdl_add_cmd(NEMA_VAR0_V2_1, 4*2 );                  /// Interpolator 1 step
+
+//    printf("\npic->uiCWidth: %d pic->uiCHeight: %d\n", pic->uiCWidth, pic->uiCHeight);
+//    printf("pic->uiCStride: %d pic->uiLStride: %d", pic->uiCStride, pic->uiLStride);
+
+    entry = true;
+  }
+
+  gettimeofday(&tim, NULL);
+  t1 = tim.tv_sec + (tim.tv_usec / 1000000.0);
+
+  /// memcpy vectors from heap to nema pool memory
+  memcpy(pic->pLuma_nema, pic->pLuma, pic->uiLHeight * pic->uiLStride);
+  memcpy(pic->pCb_nema, pic->pCb, pic->uiCHeight * pic->uiCStride);
+  memcpy(pic->pCr_nema, pic->pCr, pic->uiCHeight * pic->uiCStride);
+
+  gettimeofday(&tim, NULL);
+  t2 = tim.tv_sec + (tim.tv_usec / 1000000.0);
+
+  total_time += t2 - t1;
+
+  /// Setup Interpolators
+  ///v0.w
+  tsi_cmdl_add_cmd(NEMA_VAR0_V0_0, (uint32_t)nema_virt_to_phys((uint32_t)pic->pLuma_nema)); /// Interpolator 0 start
+  ///v0.y
+  tsi_cmdl_add_cmd(NEMA_VAR0_V0_2, (uint32_t)nema_virt_to_phys((uint32_t)pic->pCb_nema));   /// Interpolator 2 start
+  ///v0.x
+  tsi_cmdl_add_cmd(NEMA_VAR0_V0_3, (uint32_t)nema_virt_to_phys((uint32_t)pic->pCr_nema));   /// Interpolator 3 start
+
+  Nema_setconst(0, 0, pic->uiLStride);
+//  Nema_setconst(0, 1, (uint32_t)nema_virt_to_phys((uint32_t)pic->pCb_nema));
+//  Nema_setconst(0, 2, (uint32_t)nema_virt_to_phys((uint32_t)pic->pCr_nema));
+//  Nema_setconst(0, 3, (uint32_t)nema_virt_to_phys((uint32_t)pic->pLuma_nema));
+
+  /// RAST GO
+  tsi_cmdl_add_cmd(NEMA_RAST_CMD, 0x02);
+
+  tsi_cmdl_add_cmd(HOLD_DMA | NEMA_INTERRUPT, 0x4);
+
+  nema_cmdl_flush_caches();
+
+  /// Flush command list
+//  nema_flush();
+    tsi_cmdl_emit_commands(0);
+}
+
+void *
+Nema::nema_malloc(size_t size)
+{
+  return ::nema_malloc(size);
+}
+
+void
+Nema::nema_free(void *ptr)
+{
+  ::nema_free(ptr);
+}

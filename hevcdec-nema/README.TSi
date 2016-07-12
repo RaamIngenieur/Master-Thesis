@@ -1,0 +1,324 @@
+===============================================================================
+                        PROGRAMMING THE TSi NEMA GPU
+===============================================================================
+
+
+===============================================================================
+README Contents
+===============================================================================
+ [1] Programming the Nema gpu
+     [a] libNemaUtils.so
+     [b] Command lists
+     [c] Blender - Rasterizer
+     [d] Interpolators
+     [e] Constant registers
+ [2] Allocating memory
+ [3] Compiling the host source
+ [4] Writing kernels / shaders
+ [5] Compiling the kernels
+
+===============================================================================
+[1] Programming the the Nema gpu
+===============================================================================
+
+ Programming the Nema gpu is done by writing to various hardware registers.
+ These registers control how nema works and renders pixels on the framebuffer.
+ Access to the gpu registers as well as to other auxiliary functions is
+ provided with the libNemaUtils.so library.
+
+ A complete example of programming the gpu and using the NemaUtils library
+ can be found in the saple/nema.cpp file.
+
+-------------------------------------------------------------------------------
+ [a] libNemaUtils.so
+-------------------------------------------------------------------------------
+
+ Below are listed some of the most important functions:
+
+ int nema_init(void);
+ int nema_shutdown(void);
+ This first function initializes the NemaUtils library. It must be called
+ before any other function. On success 0 is returned.
+ The second function closes the connection to the gpu and frees any used
+ resources. The first function must be called again before calling any other
+ library function.
+
+ int nema_reg_read(int reg, uint32_t *var);
+ int nema_reg_write(int reg, uint32_t value);
+ These functions provide the register i/o functionality. reg is the register's
+ address. A list of all register addresses definitions is located in NemaRegs.h
+ header file.
+
+ void nema_wait_for_status(void);
+ void nema_wait_for_interrupt(void);
+ These functions are used for synchronization between the host cpu and the gpu.
+ The first functions performs a busy wait polling on the gpu's status register.
+ The second function puts the calling process into a sleep state until the gpu
+ raises an interrupt.
+
+-------------------------------------------------------------------------------
+ [b] Command lists
+-------------------------------------------------------------------------------
+
+ Generally Nema is programmed using a command list method. A command list
+ contains a batch of register writes. When a command list is ready (typically
+ when  the host program has written the necessary commands to draw a frame),
+ the command list is flushed to Nema and a new command list is written, while
+ the gpu executes the previous command list.
+
+ tsi_cmdl_add_cmd(uint32_t reg, uint32_t data)
+ In order to issue a new command in the current command list the above function
+ is used, where reg is the register to be written and data the value to write the reg with.
+
+ void tsi_cmdl_emit_commands(int block);
+ In order to flush the current list to the gpu and start writing a new command
+ list the above function is used. When block is non zero then this function
+ blocks until the execution of the current command list is finished. When
+ block is zero then the function flushes the new command list and returns
+ immediately. When a parallel execution of the host cpu and the gpu is desired
+ then block should be 0. No matter of block value this function will wait
+ until the gpu has finished executing the previous command list (if any),
+ before submitting the new command list.
+
+ Special commands:
+ tsi_cmdl_add_cmd(NEMA_RAST_CMD, 0x02)
+ This command will tell the gpu to start drawing. If this command is not
+ issued then nothing happens.
+
+ tsi_cmdl_add_cmd(HOLD_DMA | NEMA_INTERRUPT, 0x4);
+ This command tells the gpu to wait for each command to finish before issuing
+ the next command from the command list. This command is usually used for
+ commands that use the dma engine. The NEMA_INTERRUPT flag tells the gpu to
+ raise an interrupt when finished.
+
+ nema_cmdl_flush_caches()
+ flushes gpu caches and is called every time before flushing a new command
+ list.
+
+ Typical use case:
+
+ tsi_cmdl_add_cmd(...)
+ tsi_cmdl_add_cmd(...)
+ tsi_cmdl_add_cmd(...)
+
+ /// RAST GO
+ tsi_cmdl_add_cmd(NEMA_RAST_CMD, 0x02);
+ tsi_cmdl_add_cmd(HOLD_DMA | NEMA_INTERRUPT, 0x4);
+
+ nema_cmdl_flush_caches();
+
+ /// Flush command list
+ tsi_cmdl_emit_commands(0);
+
+-------------------------------------------------------------------------------
+ [c] Blender - Rasterizer
+-------------------------------------------------------------------------------
+
+ Usually the blender and the rasterizer are only programmed once.
+
+ BLENDER:
+ tsi_cmdl_add_cmd(NEMA_TARGET_MODE, T2D_RGBA8888)
+ This sets the framebuffer's color mode.
+
+ tsi_cmdl_add_cmd(NEMA_TARGET_BAR, m_fbp)
+ This sets the framebuffer's starting address. The pointer must be a physical
+ memory address. The frambuffers physical address can be queried from the
+ LCD driver with: thinklcdml_reg_read(0x3c, &m_fbp);
+
+ tsi_cmdl_add_cmd(NEMA_TARGET_STRIDE,  (m_xres * 4))
+ This sets the framebuffers stride. This depends on framebuffer's color mode.
+
+ tsi_cmdl_add_cmd(NEMA_TARGET_RESOL,   (m_yres << 16) | m_xres);
+ This sets the frame buffer resolution. The 16 first most significant bits
+ contains the framebuffer's height while the other 16 least significant bits
+ contain the framebuffer's width.
+
+ tsi_cmdl_add_cmd(NEMA_TARGET_CLIPMAX, ((m_yres-1) << 16) | (m_xres-1))
+ This sets the rasterizer viewport. Any pixel generated outside these dimensions
+ is clipped.
+
+ tsi_cmdl_add_cmd(NEMA_TARGET_BLEND, (DSBF_ZERO << 16) | (DSBF_ONE))
+ This sets the blender blending mode. In the above command the default mode is
+ used, where every new pixel overwrites the one previously written.
+
+
+ RASTERIZER:
+ The rasterizer is responsible for generating new gpu threads. Each thread has
+ a unique 2D coordinate.
+
+ tsi_cmdl_add_cmd(NEMA_VERTEX0_X, 0)
+ tsi_cmdl_add_cmd(NEMA_VERTEX0_Y, 0)
+ These commands set the rasterizer's starting coordinates, which means that
+ the first thread will be on (0, 0).
+
+ tsi_cmdl_add_cmd(NEMA_VERTEX1_X, width - 1)
+ tsi_cmdl_add_cmd(NEMA_VERTEX1_Y, height - 1)
+ These commands set the rasterizer's finish coordinates. The rasterizer will
+ generate a total of (width * height) gpu threads.
+
+-------------------------------------------------------------------------------
+ [d] Interpolators
+-------------------------------------------------------------------------------
+
+ The interpolators are controlled by the rasterizer and are used to linearly
+ interpolate values across the gpu threads. Each interpolator has a starting
+ value, an increasing step and a stride. There are 4 available interpolators.
+
+ The rasterizer gives the startig value to the first thread, then increases
+ the value by step and assignes it to next thread, and so on. When the
+ rasterizer fill a line, the initial value is increased by stride, and the
+ process goes on.
+
+ tsi_cmdl_add_cmd(NEMA_VAR0_V0_0, start)
+ This command sets the interpolator 0 starting value.
+
+ tsi_cmdl_add_cmd(NEMA_VAR0_V1_0, stride)
+ This command sets the interpolator 0 stride.
+
+ tsi_cmdl_add_cmd(NEMA_VAR0_V2_0, step)
+ This command sets the interpolator 0 step.
+
+-------------------------------------------------------------------------------
+ [e] Constant registers
+-------------------------------------------------------------------------------
+
+ Constant registers are registers that can be written from the host program
+ and are read only in the shader program. These registers are useful for
+ passing values that remain constant through the kernel execution and between
+ threads.
+
+ The nema gpu has 16 constant vector registers, which means 16 registers with
+ 4 32 bit elements each.
+
+ Writing to the constant registers can be done with the
+
+ Nema_setconst(int reg, int comp, uint32_t value) function.
+
+ reg is the register to be written and must be a value between 0 and 15.
+ comp is the vector component to be written and must be between 0 and 3.
+ value is the value to be written.
+
+ NOTE: Kernel program accesses these registers starting from 128 register.
+       So writing from host the const register 0, the kernel must read the
+       register 128.
+
+ Examples:
+ Nema_setconst(0, 1, 0xff);
+ Nema_setconst(0, 2, 0xff);
+
+ Kernel program will find these values written in 128.y and 128.z registers.
+
+ Nema_setconst(1, 2, 0xaa);
+ Kernel program will find these values written in and 129.z registers.
+
+===============================================================================
+ [2] Allocating memory
+===============================================================================
+
+ The gpu can only operate on contiguous physical memory addresses. To do so
+ the NemaUtils library offers a custom memory manager. Its use is much like
+ malloc's functionality.
+
+ These are the most important functions.
+ void *nema_malloc(size_t numbytes);
+ void nema_free(void *firstbyte);
+ void *nema_realloc(void *src, size_t size);
+
+ Before allocating any memory the memory manager must be initialized with
+ the function nema_meminit(void *address_start, size_t size). This is handled
+ in the nema_init() function.
+
+ The previous functions return and operate on virtual addresses. When passing
+ an address to the gpu it must be converted to physical. This is done using
+ the uint32_t nema_virt_to_phys(uint32_t virt) function.
+
+===============================================================================
+ [3] Compiling the host source
+===============================================================================
+
+ In order to compile the host cpu program the libNemaUtils.so must be linked.
+
+ Also the following header files must be included:
+
+ Think2D.h
+ Contains declarations for various constants like blending modes and color
+ modes.
+
+ NemaUtils.h
+ Contains function declarations for the nema functions like register i/o,
+ the gpu initialization function and the memory management functions.
+
+ tsi_cmdlist.h
+ Contains the declarations for the command list functions.
+
+ NemaRegs.h
+ Contains the declarations for the register constants
+
+===============================================================================
+[4] Writing kernels / shaders
+===============================================================================
+
+ An example of a kernel program can be found in yuv2rgba.cpp file. Each
+ generated thread executes the same kernel. Each thread can read the constant
+ registers, which are usually written by the host program and the automatic
+ registers. The automatic registers are usually written by the interpolators
+ or by the rasterizer.
+
+ Interpolator values:
+ Interpolators write their values in the v0, v1, ... registers. The registers
+ are vectors of 4 32bit values.
+
+ read_reg(val0, "v0.w");
+ This will write val0 variable with the value from interpolator 0
+
+ read_reg(val0, "v0.z");
+ This will write val0 variable with the value from interpolator 1
+
+ v0.y contains the value from interpolator 2 and v0.x from interpolator 3.
+
+ ui_vec4 coords;
+ read_coords(coords);
+ The macro read_coords reads the thread's coordinates and writes them in
+ coords.x and coords.y.
+
+ pixout(coords, color, PIXOUT_FLAG);
+ This command makes blendes to write the value contained in color in the
+ (coords.x, coords.y) in the framebuffer.
+
+ pixout_y() function has the same functionality but also causes the shader to
+ terminate it's execution.
+
+ Constant registers:
+ Constant registers are read just like the other registers, using the read_reg
+ macro. Constant registers are name with a v prefix and start from 128. So
+ for example the following line
+ unsigned int foo;
+ read_reg(foo, "v128.x");
+
+ will read register 128 (or 0 register from the host's program perspective
+ Nema_setconst(0, 1, 0xff);)
+ into foo variable.
+
+ read_reg(foo, "v129.y");
+ read 129.y which was written from host with the
+ Nema_setconst(1, 2, 0xaa);
+ function call.
+
+===============================================================================
+[5] Compiling the kernel
+===============================================================================
+
+ In folder kernels exists compile_kernel.sh script. This script takes as an
+ input the filename (without the suffix, eg. the .cpp) of a file which contains
+ a kernel's source, compiles it and produces a Nema binary.
+
+ For example:
+ ./compile_kernel.sh yuv2rgba
+ will compile yuv2rgba.cpp and produce yuv2rgba.bin.
+
+ This file must then be loaded from the host program and load it on the gpu.
+
+ This is done with the following commands:
+ void *bin = nema_load_binary("sample/kernels/yuv2rgba.bin");
+ tsi_cmdl_add_cmd(NEMA_FRAG_PTR, ::nema_virt_to_phys((uint32_t)bin));
+

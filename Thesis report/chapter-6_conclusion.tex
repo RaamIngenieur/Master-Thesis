@@ -1,0 +1,52 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary}
+
+The aim of the thesis was to study the effects of parameter variations and software optimizations of a Stereo vision algorithm and further evaluate the Nema eGPU using the algorithm. The work began with the explanation of the importance of Stereo vision and eGPU. The problems to be tackeled were discussed and phrased. Requirements of an algorithm to be studied were identified. The problems arising due to the nature of the application and the hardware were listed and explanation was given how they were tackled. Different parts of algorithm were identified and choice of methods in each part of algorithm was explained and justified. A list of optimizations to improve the execution time of the algorithm were proposed and a justification was presented on why the optimizations could work. A series of experiments varying the parameters of the chosen algorithm were performed. In each case the functional performance of the algorithm was measured using BMPRE method proposed by Cabezas et al. \cite{Cabezas2012}. Set of parameters yielding the best functional performance were chosen. The execution time for each version of algorithm with different optimizations proposed were presented. The cases for which speed up was not achieved were discussed with possible arguments. The algorithm was implemented in Nema eGPU. The functional performance and the execution time of the algorithm were observed. Possible reasons for the observations are discussed and further experiments were performed where possible to refine the observations.
+
+
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+\begin{itemize}
+\item{SHD algorithm along with preprocessing including morphological opening and census transform were found to be suitable for the eGPU evaluation.}
+\item{The parameters MW = 3, CTW = 11, D value: 0-100, and SHDW = 13 were found to provide the best functional results for the chosen algorithm.}
+\item{Optimization of the algorithm yielded in 31X, 32X and 35X improvement in execution time in Intel core i3,i5, and i7 respectively.}
+\item{After optimizing the algorithm in various aspects it was found that it fell short of real-time performance in hardwares including Intel Core i3, i5 and i7.}
+\item{For the chosen dataset, functionally eGPU performs marginally better than Intel Core i3 processor. Further analysis with more dataset needs to be done to reason out the increase in functional performance of eGPU.}
+\item{The eGPU performs considerably slower than the implementation without the eGPU. The slow down is not dependent on the kernel choice or poor thread management.}
+\item{The slow down of the eGPU might be attributed to slower clocking of the GPU and high miss rate of data. Further research needs to be done in this direction for more accurate results.}
+\end{itemize}
+
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Suggestions for future work}
+\begin{itemize}
+	\item{Further optimization can be done on the algorithm to increase the performace speed. Two possible optimizations can be:}
+	\begin{itemize}
+		\item{SHD can be further optimized by subtracting the first row and adding the next row to get the SHD value for the next pixel}
+		\item{The each bit in census transform is not completely independent. Bits of census transformed pixels present in the census transformed window might be reused to boost performance.}
+	\end{itemize}
+	\item{Further analysis needs to be done to identify the change in functional performance between the hardware discussed ans eGPU}
+	\item{The algorithm can be deployed in the silicon implementation of the eGPU and performance analysed.}
+	\item{The cache activities can be tracked to further confirm the reason behind the slow down of eGPU performance.}
+\end{itemize}

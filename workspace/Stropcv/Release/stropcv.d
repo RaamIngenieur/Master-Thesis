@@ -1,0 +1,1 @@
+stropcv.d: ../stropcv.cpp

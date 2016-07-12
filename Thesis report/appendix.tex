@@ -1,0 +1,113 @@
+\chapter{Appendix}
+\label{chap:appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nema kernel for morphological erosion}
+\label{s:kerero}
+
+\lstset {language=C++}
+\begin{lstlisting}
+
+#include "macros.h"
+
+extern "C" 
+{
+
+  #define USE_PIXOUT
+
+  __attribute__((naked)) void shd()
+  {
+    unsigned char *input, *output, min;
+    int row, column;
+
+    read_reg(row, "v128.x");//Read constant register value to get the total number of rows
+    read_reg(column, "v128.y");//Read constant register value to get the total number of columns
+  
+    ui_vec4 coords;
+    read_coords(coords);//Read coordinates of the thread
+    
+    read_reg(input, "v0.w"); /// Read value from interpolator 0
+    read_reg(output, "v0.z"); /// Read value from interpolator 1
+  
+    if(coords.x>1 && coords.x<(column-1) &&coords.y>1 && coords.y<(row-1))
+    {
+      min = *input;
+      for (int k = -1; k <= 1; k++)
+      {
+        for (int l = -1; l <= 1; l++)
+        {
+          if (*(input+ k*column+ l) < min)
+          {
+            min = *(input + k*column + l);
+          }
+        }
+      }
+      *output = min;
+    }
+  }
+
+} // extern "C"
+
+\end{lstlisting}
+
+\hfill \break
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section of Nema host program invoking the eGPU}
+\label{s:hostero}
+
+\lstset {language=C++}
+\begin{lstlisting}
+
+...
+void Nema::erode(unsigned char* input,unsigned char *output, int row, int column)
+{
+  int width, height;
+
+  void *bin = nema_load_binary("kernels/erode.bin"); /// Load binary
+  assert(bin);
+
+  tsi_cmdl_add_cmd(NEMA_FRAG_PTR, ::nema_virt_to_phys((uint32_t)bin));/// Converting virtual address to physical address
+
+  /// Now that the video dimensions are known reprogram rasterizer and the interpolators
+  width  = column;
+  height = row;
+
+    /// Everything drawn outside this viewport is clipped out
+  tsi_cmdl_add_cmd(NEMA_TARGET_RESOL,  (height << 16) | width);
+
+    /// Set up rasterizer dimensions
+    /// The rasterizer will generate ( width - 1 ) x ( height - 1 ) threads
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_X, width - 1);
+  tsi_cmdl_add_cmd(NEMA_VERTEX1_Y, height - 1);
+
+  tsi_cmdl_add_cmd(NEMA_VAR0_V1_0, width);   /// Interpolator 0 stride
+  tsi_cmdl_add_cmd(NEMA_VAR0_V2_0, 1);       /// Interpolator 0 step
+
+  tsi_cmdl_add_cmd(NEMA_VAR0_V1_1, width);   /// Interpolator 1 stride
+  tsi_cmdl_add_cmd(NEMA_VAR0_V2_1, 1);       /// Interpolator 1 step
+
+  /// Setup Interpolators
+  tsi_cmdl_add_cmd(NEMA_VAR0_V0_0, (uint32_t)nema_virt_to_phys((uint32_t)input)); /// Interpolator 0 start
+  tsi_cmdl_add_cmd(NEMA_VAR0_V0_1, (uint32_t)nema_virt_to_phys((uint32_t)output)); /// Interpolator 1 start
+
+  ///Store the image dimensions as constants
+  Nema_setconst(0, 0, row);
+  Nema_setconst(0, 1, column);
+
+  /// Start the rasterizer
+  tsi_cmdl_add_cmd(HOLD_DMA | NEMA_RAST_CMD, 0x02);
+
+
+  nema_cmdl_flush_caches();
+  tsi_cmdl_emit_commands(0);
+}
+...
+\end{lstlisting}

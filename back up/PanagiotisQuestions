@@ -1,0 +1,51 @@
+Doubts to ask:
+1. Vector operation.
+
+2.  tsi_cmdl_add_cmd(NEMA_VAR1_V0_3, 1); /// stepx
+    tsi_cmdl_add_cmd(NEMA_VAR1_V0_2, 1); /// stepy
+
+3. Is there anyway to display board output directly to monitor? (connecting a monitor to HDMI port doesn't display)
+
+4. Is there a work group / work scheduler for GPU so that it can do multiple things at same time? (can multiple kernels be loaded to the gpu at the same time so that one is being executed while the other waits for memory?)
+
+5. How many memory channels are there? Is there a way to choose physical memory address so that memory channels are accessed parallely?
+
+6. A small program output for nema_shutdown is as below:
+   total_work_time: 40686ms
+   total_wait_time: 0ms
+   Where as actual time as measured at host CPU is 0.995376s
+   How to relate total work time to actual time?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

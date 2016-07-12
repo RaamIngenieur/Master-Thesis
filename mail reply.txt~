@@ -1,0 +1,14 @@
+Dear Panagiotis,
+
+Thanks for your reply.
+
+I think the speed up is not due to cache getting warmer.
+
+The kernels operate on input and output images. Theoritically, 1MB of cache can store 29120 pixels (input and output) in the case of first kernel and 131072 pixels (input and output) in the case of second kernel(as information per pixel is lesser). However each kernel, on each iteration needs to operate on (640 x 480) 307200 pixels. This implies that cache is loaded with pixels multiple times for each kernel run during each iteration. Cache gets full and hot during the first iteration itself.
+
+Thank you for the alternative suggested. The alternative however would require huge amount of memory storage (about 100 frame data for 1 frame processed)
+
+In order to look more into this, is there a way to get the miss rate of the cache?
+Is there a way to disable the cache and check how it affects the application? (Though I think it will get slower anyway)
+
+Can you let me know more about architecture of each theread? (word size, availability of multipliers/dividers etc..)

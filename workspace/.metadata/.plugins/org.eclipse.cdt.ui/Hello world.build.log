@@ -1,0 +1,6 @@
+15:43:57 **** Build of configuration Debug for project Hello world ****
+make all 
+make: *** No rule to make target `../src/Hello world.cpp', needed by `src/Hello world.o'. Stop.
+
+15:43:57 Build Finished (took 65ms)
+

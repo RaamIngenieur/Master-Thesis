@@ -1,0 +1,1 @@
+speed.d: ../speed.cpp

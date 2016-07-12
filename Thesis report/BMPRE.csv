@@ -1,0 +1,13 @@
+Image,CT window size,Disp. Min.,Disp. Max,Resolution,BMPRE
+Tsukuba frame 1,3,0,50,640x480,6.74E+004
+Tsukuba frame 1,3,0,100,640x480,6.58E+004
+Tsukuba frame 1,5,0,50,640x480,6.36E+004
+Tsukuba frame 1,5,0,100,640x480,5.99E+004
+Tsukuba frame 1,7,0,50,640x480,6.19E+004
+Tsukuba frame 1,7,0,100,640x480,5.73E+004
+Tsukuba frame 1,9,0,50,640x480,6.08E+004
+Tsukuba frame 1,9,0,100,640x480,5.57E+004
+Tsukuba frame 1,11,0,50,640x480,6.03E+004
+Tsukuba frame 1,11,0,100,640x480,5.48E+004
+Cone (Middlebury),11,0,255,1800x1500,2.40E+005
+Sawtooth (Middlebury),11,0,100,434x380,3161.3

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Stereo/perf.data&apos; to &apos;perf3-8.data&apos;" description="Rename resource &apos;perf.data&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="perf.data" name="perf3-8.data" stamp="1438616108978" updateReferences="true"/>
+</session>

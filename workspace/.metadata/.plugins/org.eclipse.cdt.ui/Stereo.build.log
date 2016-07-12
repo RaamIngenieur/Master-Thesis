@@ -1,0 +1,19 @@
+19:49:14 **** Incremental Build of configuration Release for project Stereo ****
+make all 
+Building file: ../speed.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -march=native -mtune=native -pg -Wall -c -fmessage-length=0 -pthread -mpopcnt -MMD -MP -MF"speed.d" -MT"speed.d" -o "speed.o" "../speed.cpp"
+../speed.cpp: In function ‘void SHDR2L13(float*, long unsigned int*, long unsigned int*, int, int)’:
+../speed.cpp:292:31: warning: ‘pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    *(r+(i+6)*column+j+6) = pos;
+                               ^
+Finished building: ../speed.cpp
+ 
+Building target: Stereo
+Invoking: GCC C++ Linker
+g++ -pg -o "Stereo"  ./speed.o   -lpng12 -lm -lz -lpthread
+Finished building target: Stereo
+ 
+
+19:49:17 Build Finished (took 3s.326ms)
+

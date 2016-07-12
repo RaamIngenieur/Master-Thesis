@@ -1,0 +1,115 @@
+For better understanding of Stereo vision few terms are defined in the section below:\\
+
+{\bf Pixel\cite{olea_introduction_2015}:} Pixel is the short form of picture element. It is the physical point in an image. The size of a pixel (in bits) depend on the format of the image. In this thesis the input images are monochrome with pixel sizes of 8 bits.\\
+
+{\bf Resolution\cite{olea_introduction_2015}:} Resolution of an image is number of distinct pixels in each direction. It is specified in WIDTHxHEIGHT format.\\
+
+{\bf Stride\cite{olea_introduction_2015}:} Stride of an image is the number of memory locations between start of successive image lines.\\
+
+The stride of the blender usually depends on the colour mode of the image involved. In the case of this thesis, though the colour mode is monochrome, 121 bits of data are contained for each pixel. Hence colour mode of rgb is chosen with a stride 4 times the x resolution.
+
+
+\chapter{Appendix}
+\label{chap:appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Nema kernel for morphological erosion}
+\label{s:kerero}
+
+\#include "macros.h"
+
+extern "C" \\
+\{
+
+  \#define USE\_PIXOUT
+
+  \_\_attribute\_\_((naked)) void shd()
+  \{
+    unsigned char *input, *output, min;
+    int row, column;
+
+    read\_reg(row, "v128.x");//Read constant register value to get the total number of rows
+    read\_reg(column, "v128.y");//Read constant register value to get the total number of columns
+  
+    ui\_vec4 coords;
+    read\_coords(coords);//Read coordinates of the thread
+    
+    read\_reg(input, "v0.w"); /// Read value from interpolator 0
+    read\_reg(output, "v0.z"); /// Read value from interpolator 1
+  
+    if(coords.x>1 \&\& coords.x<(column-1) \&\&coords.y>1 \&\& coords.y<(row-1))
+    \{
+      min = *input;
+      for (int k = -1; k <= 1; k++)
+      \{
+        for (int l = -1; l <= 1; l++)
+        \{
+          if (*(input+ k*column+ l) < min)
+          \{
+            min = *(input + k*column + l);
+          \}
+        \}
+      \}
+      *output = min;
+    \}
+  \}
+
+\} // extern "C"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   SECTION   %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Section of Nema host program invoking the eGPU}
+\label{s:hostero}
+
+...\\
+void Nema::erode(unsigned char* input,unsigned char *output, int row, int column)
+\{
+  int width, height;
+
+  void *bin = nema\_load\_binary("kernels/erode.bin"); /// Load binary
+  assert(bin);
+
+  tsi\_cmdl\_add\_cmd(NEMA\_FRAG\_PTR, ::nema\_virt\_to\_phys((uint32\_t)bin));/// Converting virtual address to physical address
+
+  /// Now that the video dimensions are known reprogram rasterizer and the interpolators
+  width  = column;
+  height = row;
+
+    /// Everything drawn outside this viewport is clipped out
+  tsi\_cmdl\_add\_cmd(NEMA\_TARGET\_RESOL,  (height << 16) | width);
+
+    /// Set up rasterizer dimensions
+    /// The rasterizer will generate ( width - 1 ) x ( height - 1 ) threads
+  tsi\_cmdl\_add\_cmd(NEMA\_VERTEX1\_X, width - 1);
+  tsi\_cmdl\_add\_cmd(NEMA\_VERTEX1\_Y, height - 1);
+
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V1\_0, width);   /// Interpolator 0 stride
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V2\_0, 1);       /// Interpolator 0 step
+
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V1\_1, width);   /// Interpolator 1 stride
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V2\_1, 1);       /// Interpolator 1 step
+
+  /// Setup Interpolators
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V0\_0, (uint32\_t)nema\_virt\_to\_phys((uint32\_t)input)); /// Interpolator 0 start
+  tsi\_cmdl\_add\_cmd(NEMA\_VAR0\_V0\_1, (uint32\_t)nema\_virt\_to\_phys((uint32\_t)output)); /// Interpolator 1 start
+
+  ///Store the image dimensions as constants
+  Nema\_setconst(0, 0, row);
+  Nema\_setconst(0, 1, column);
+
+  /// Start the rasterizer
+  tsi\_cmdl\_add\_cmd(HOLD\_DMA | NEMA\_RAST\_CMD, 0x02);
+
+
+  nema\_cmdl\_flush\_caches();
+  tsi\_cmdl\_emit\_commands(0);
+\}\\
+...
+
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Stereo/perf.data&apos; to &apos;perf20-7.data&apos;" description="Rename resource &apos;perf.data&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="perf.data" name="perf20-7.data" stamp="1437388937030" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Stereo/perf.data&apos; to &apos;perf20-7-2.data&apos;" description="Rename resource &apos;perf.data&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="perf.data" name="perf20-7-2.data" stamp="1437389691881" updateReferences="true"/>
+</session>

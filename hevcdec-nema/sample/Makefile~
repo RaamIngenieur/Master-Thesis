@@ -1,0 +1,33 @@
+ROOTDIR = $(shell readlink -f ../)
+CXX = g++-4.8
+ARCH = $(shell $(CXX) -dumpmachine)
+#GCCVER= gcc-$(shell $(CXX) -dumpversion)
+GCCVER= gcc-4.7
+CFLAGS = -std=c++11 -O0 -g -DNEMA_ON_ZYNQ
+#CFLAGS = -O0 -g -DNEMA_ON_ZYNQ
+INCLUDEDIR = -I$(ROOTDIR)/include -I$(ROOTDIR)/sample/NemaDriver
+LDFLAGS = -L$(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -Wl,-rpath $(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -L$(ROOTDIR)/sample/NemaDriver -Wl,-rpath=$(ROOTDIR)/sample/NemaDriver
+
+LIBS = -lpthread -lhevcdeclib -lNemaUtils -lrt -lm
+
+SOURCES=AnnexBread.cpp hevcdec.cpp HEVCDecoderApp.cpp nema.cpp program_options_lite.cpp VideoIOYuv.cpp
+OBJ=$(SOURCES:.cpp=.o)
+
+TARGET = ../hevcdec-sample
+
+all: $(SOURCES) $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $(LDFLAGS) $(OBJ) $(LIBS)
+
+.cpp.o:
+	$(CXX) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
+
+cmp:
+	$(CXX)  -c $(CFLAGS) $(INCLUDEDIR) $(SOURCES)
+
+lnk:
+	$(CXX)  -o $(TARGET) $(LDFLAGS) $(OBJ) $(LIBS)
+
+clean:
+	rm -f $(TARGET) $(OBJ)

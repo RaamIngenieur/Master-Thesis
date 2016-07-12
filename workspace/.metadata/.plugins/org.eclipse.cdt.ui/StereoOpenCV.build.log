@@ -1,0 +1,11 @@
+15:31:12 **** Build of configuration Release for project StereoOpenCV ****
+make all 
+Building file: ../source.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O3 -Wall -c -fmessage-length=0 -opencv -MMD -MP -MF"source.d" -MT"source.d" -o "source.o" "../source.cpp"
+cc1plus: fatal error: source.d: No such file or directory
+compilation terminated.
+make: *** [source.o] Error 1
+
+15:31:12 Build Finished (took 62ms)
+

@@ -1,0 +1,33 @@
+ROOTDIR = $(shell readlink -f ../)
+CXX = g++-4.8
+ARCH = $(shell $(CXX) -dumpmachine)
+#GCCVER= gcc-$(shell $(CXX) -dumpversion)
+GCCVER= gcc-4.7
+CFLAGS = -std=c++11 -O0 -g -DNEMA_ON_ZYNQ
+#CFLAGS = -O0 -g -DNEMA_ON_ZYNQ
+INCLUDEDIR = -I$(ROOTDIR)/include -I$(ROOTDIR)/Test1/NemaDriver
+LDFLAGS = -L$(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -Wl,-rpath $(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -L$(ROOTDIR)/Test1/NemaDriver -Wl,-rpath=$(ROOTDIR)/Test1/NemaDriver
+
+LIBS = -lpthread -lhevcdeclib -lNemaUtils -lrt -lm -lpng
+
+SOURCES= Test2.cpp nema.cpp
+OBJ=$(SOURCES:.cpp=.o)
+
+TARGET = Test2
+
+all: $(SOURCES) $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) -o $@ $(LDFLAGS) $(OBJ) $(LIBS)
+
+.cpp.o:
+	$(CXX) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
+
+cmp:
+	$(CXX)  -c $(CFLAGS) $(INCLUDEDIR) $(SOURCES)
+
+lnk:
+	$(CXX)  -o $(TARGET) $(LDFLAGS) $(OBJ) $(LIBS)
+
+clean:
+	rm -f $(TARGET) $(OBJ)

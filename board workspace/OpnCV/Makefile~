@@ -1,0 +1,33 @@
+ROOTDIR = $(shell readlink -f ../)
+CXX = g++-4.8
+ARCH = $(shell $(CXX) -dumpmachine)
+#GCCVER= gcc-$(shell $(CXX) -dumpversion)
+GCCVER= gcc-4.7
+CFLAGS = -std=c++11 -O3 -g -march=native -mtune=native -mfloat-abi=hard -mfpu=neon
+#CFLAGS = -O0 -g -DNEMA_ON_ZYNQ
+INCLUDEDIR = -I$/usr/include/arm-linux-gnueabihf/c++/4.8
+LDFLAGS = -L$(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -Wl,-rpath $(ROOTDIR)/lib/$(ARCH)/$(GCCVER) -L$(ROOTDIR)/Test1/NemaDriver -Wl,-rpath=$(ROOTDIR)/Test1/NemaDriver
+
+LIBS = -lpthread -lrt -lm -lpng -lz -lopencv_highgui -lopencv_core
+
+SOURCES= opncv.cpp
+OBJ=$(SOURCES:.cpp=.o)
+
+TARGET = Stereo
+
+all: $(SOURCES) $(TARGET)
+
+$(TARGET): $(OBJ)
+	$(CXX) -o $@  $(OBJ) $(LIBS)
+
+.cpp.o:
+	$(CXX) -c $(CFLAGS) $< -o $@
+
+cmp:
+	$(CXX)  -c $(CFLAGS)  $(SOURCES)
+
+lnk:
+	$(CXX)  -o $(TARGET)  $(OBJ) $(LIBS)
+
+clean:
+	rm -f $(TARGET) $(OBJ)
